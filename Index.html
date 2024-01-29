@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Travel</title>
+  <script src="https://kit.fontawesome.com/b46327bd96.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  * {
+
+    margin: 0px;
+    width: cals(10%-100px);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: cals(100%-100px);
+    overflow: wrap;
+    height: cals(100%-100px);
+  }
+
+  header {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  div.scroll-container {
+    box-shadow: 0px 0px 2px;
+    overflow: auto;
+    width: 90vw;
+    display: flex;
+    height: 7vh;
+    grid-gap: 12px;
+    white-space: nowrap;
+    margin: 10px auto;
+    padding: 10px;
+    align-items: center;
+
+  }
+
+  .li1 {
+    padding: 5px;
+    display: flex;
+    border-radius: 10px;
+    height: 6vh;
+    ;
+    width: 92%;
+    align-items: center;
+    box-shadow: 0px 0px 2px;
+  }
+
+  .li1:hover {
+    color: #3498db;
+    transition: 0.3s ese-out;
+    font-size: 17px;
+    box-shadow: 0px 0px 4px black;
+  }
+
+  .logo img {
+    width: 50px;
+  }
+
+  .conten {
+    border: 1px solid black;
+    width: 90%;
+    margin: auto;
+    font-family: sans-serif;
+    display: flex;
+    overflow-x: scroll;
+
+  }
+
+  .search {
+    text-align: center;
+    padding: 5px;
+    width: 92%;
+    display: block;
+    margin: 20px auto;
+    overflow: hidden;
+    box-shadow: .1px .1px 2.5px;
+  }
+
+  .search:hover {
+    color: #3498db;
+    box-shadow: 0px 0px 4px black;
+  }
+
+  .login {
+    color: white;
+  }
+
+  .search input {
+    width: 90%;
+    padding: 5px;
+    font-size: 150%;
+    border: 0;
+    outline: 0;
+  }
+
+  .search i {
+    color: #3498db;
+  }
+
+  .search hr,
+  .live-bus hr {
+    width: 90%;
+    margin: auto;
+  }
+
+  .search button,
+  .opt {
+    padding: 10px;
+    width: 90%;
+  }
+
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 37.4%;;
+    overflow: hidden;
+    width: auto;
+  }
+
+  .live-bus h2 {
+    margin: 10px;
+  }
+
+  .live-bus {
+    text-align: center;
+    padding: 5px;
+    border: 0px solid black;
+    width: 92%;
+    margin: auto;
+    box-shadow: .1px .1px 2.5px;
+  }
+
+  .live-bus:hover {
+    box-shadow: 0px 0px 4px black;
+  }
+
+  .live-bus input {
+    width: 90%;
+    padding: 5px;
+    border: none;
+    font-size: 150%;
+    border: 0;
+    outline: 0;
+  }
+
+  .live-bus button {
+    width: 90%;
+  }
+
+  .contact {
+    background-color: lightskyblue;
+    height: 581.5px;
+    margin: auto;
+    width: 95%;
+    border: solid black 1px;
+    box-shadow: 0px 0px 4px black;
+    display: none;
+  }
+  .contact a{
+    text-decoration: none;
+    color: black;
+  }
+  .l0001 {
+    border: solid black 2px;
+    margin: 5px auto;
+    width: 97%;
+    overflow: hidden;
+    justify-content: space-around;
+  }
+.l0001:hover{
+  color: white;
+  padding: 4px;
+  font-size: 17.5px;
+}
+  .b2855 {
+    display: flex;
+    justify-content: space-around;
+    padding: -50px;
+    margin: 10px;
+    overflow: hidden;
+  }
+
+  .b2856 {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    overflow: hidden;
+  }
+
+  body .listm {
+    width: 100%;
+    margin: auto;
+    background: white;
+    position: absolute;
+    overflow: scroll;
+    height: 0%;
+
+  }
+
+  .l1 {
+    margin: auto;
+    padding: 6.6%;
+    font-size: 1em;
+    overflow: hidden;
+    margin: 2px auto;
+  }
+
+  .l1:hover {
+    color: #3498db;
+    transition: 1s ease-out;
+  }
+
+  @media (max-width:600px) {
+    body {
+      width: auto;
+    }
+
+    .scroll-container {
+      overflow: hidden;
+    }
+
+    div.scroll-container {
+      height: 10vh;
+    }
+
+    footer {
+      bottom: 0;
+    }
+
+    .l1 {
+      padding: 10.7%;
+    }
+
+  }
+
+  @media (min-width:480px) {
+    body {
+      width: auto;
+    }
+
+    .scroll-container {
+      margin: auto;
+    }
+
+    footer {
+      width: auto;
+      bottom: 0;
+    }
+
+    .l1 {
+      padding: 6.5%;
+    }
+    
+    
+    
+    
+    
+   
+   
+   
+   
+   
+   
+   
+
+  
+</style>
+
+<body>
+
+  <div class="listm">
+
+    <div onclick="menu()" class="l1"><i class="fa-solid fa-house"></i>Home </div>
+    <div class="l1"><i class="fa-solid fa-cross"></i>Add Place </div>
+
+    <div class="l1"> <i class="fa-solid fa-location-pin"></i> Remove Place</div>
+
+    <div class="l1"><i class="fa-solid fa-pen-nib"></i>Suggetion </div>
+
+    <div class="l1"><i class="fa-solid fa-address-card"></i>About </div>
+
+    <div class="l1"><i class="fa-solid fa-address-book"></i>Contact</div>
+
+    <div class="l1"> <i class="fa-solid fa-exclamation"></i>Team & Condition</div>
+
+  </div>
+  <header>
+    <div class="logo">
+      <h1>🚍</h1>
+    </div>
+    <div class="name">
+      <h1>Bus Travel</h1>
+    </div>
+    <div onclick="cros()" class="login">
+      <h2><i class="fa-solid fa-bars"></i></h2>
+    </div>
+  </header>
+
+
+
+
+
+
+
+  <div class="scroll-container">
+    <div class="li1">
+      <h2>Shahpura-</h2>
+      <h2>Jabalpur</h2>
+    </div>
+    <div class="li1">
+      <h2>Jabalpur-</h2>
+      <h2>Shahpura.</h2>
+    </div>
+    <div class="li1">
+      <h2>Patan-</h2>
+      <h2>Jabalpur</h2>
+    </div>
+    <div class="li1">
+      <h2>Jabalpur-</h2>
+      <h2>Nirshinghpur</h2>
+    </div>
+    <div class="li1">
+      <h2>Shahpura-</h2>
+      <h2>Tendukheda</h2>
+    </div>
+    <div class="li1">
+      <h2>Shahpura-</h2>
+      <h2>Belkheda</h2>
+    </div>
+
+  </div>
+
+  <section class="search">
+    <i class="fa-solid fa-arrow-down"></i>
+    <input class="start" type="text" placeholder="Starting Place...">
+    <hr><br>
+    <i class="fa-regular fa-circle"></i>
+    <input class="end" type="text" placeholder="Ending Place...">
+    <hr><br><br>
+    <span>
+      <h5 id="valid"></h5>
+    </span>
+    <button onclick="searchlist()">
+      <h2>Search</h2>
+    </button>
+  </section>
+
+  <section class="live-bus">
+    <h2>Live Spot</h2>
+    <input class="spot" type="text" placeholder="Name/ Number">
+    <hr><br>
+    <span>
+      <h5 id="valids"></h5>
+    </span>
+    <button onclick="searchlist1()">
+      <h2>Find </h2>
+    </button>
+  </section>
+  <br>
+
+  <section id="contact" class="contact">
+<a href="/bus1234.html">
+    <div  id="10001" class="l0001">
+      <div class="b2855">
+        <h2>1971</h2>
+        <p>
+        <h2>08:30 AM ➡️ 09:20 AM <h2>
+            </p>
+      </div>
+      <div class="b2856">
+        <h2>MAHADEV BUS</h2>
+        <h4>Runs Daily</h4>
+      </div>
+    </div></a>
+<a href="/bus1234.html">
+    <div class="l0001">
+      <div class="b2855">
+        <h2>1971</h2>
+        <p>
+        <h2>08:30 AM ➡️ 09:20 AM <h2>
+            </p>
+      </div>
+      <div class="b2856">
+        <h2>MAHADEV BUS</h2>
+        <h4>Runs Daily</h4>
+      </div>
+    </div></a>
+<a href="/bus1234.html">
+    <div class="l0001">
+      <div class="b2855">
+        <h2>1971</h2>
+        <p>
+        <h2>08:30 AM ➡️ 09:20 AM <h2>
+            </p>
+      </div>
+      <div class="b2856">
+        <h2>MAHADEV BUS</h2>
+        <h4>Runs Daily</h4>
+      </div>
+    </div></a>
+
+<a href="/bus1234.html">
+    <div class="l0001">
+      <div class="b2855">
+        <h2>1971</h2>
+        <p>
+        <h2>08:30 AM ➡️ 09:20 AM <h2>
+            </p>
+      </div>
+      <div class="b2856">
+        <h2>MAHADEV BUS</h2>
+        <h4>Runs Daily</h4>
+      </div>
+    </div></a>
+
+<a href="/bus1234.html">
+    <div class="l0001">
+      <div class="b2855">
+        <h2>1971</h2>
+        <p>
+        <h2>08:30 AM ➡️ 09:20 AM <h2>
+            </p>
+      </div>
+      <div class="b2856">
+        <h2>MAHADEV BUS</h2>
+        <h4>Runs Daily</h4>
+      </div>
+    </div></a>
+
+<a href="/bus1234.html">
+    <div class="l0001">
+      <div class="b2855">
+        <h2>1971</h2>
+        <p>
+        <h2>08:30 AM ➡️ 09:20 AM <h2>
+            </p>
+      </div>
+      <div class="b2856">
+        <h2>MAHADEV BUS</h2>
+        <h4>Runs Daily</h4>
+      </div>
+    </div></a>
+
+  </section>
+
+
+
+  <footer class="footer">
+    <p>&copy; 2023 Bus Travel | Contact: info@busdekho.com</p>
+  </footer>
+</body>
+<script>
+  function searchlist() {
+
+    var a = document.getElementsByClassName('start')[0].value;
+    var b = document.getElementsByClassName('end')[0].value;
+
+    if (a == "Jabalpur " && b == "Shahpura ") {
+      var a = document.getElementsByClassName('contact')[0].style.display = 'block';
+      var b = document.getElementsByClassName('live-bus')[0].style.display = 'block';
+      document.getElementById('valid').innerHTML = '';
+      document.getElementById('valids').innerHTML = '';
+    }
+    else {
+      document.getElementById('valid').innerHTML = 'Please Enter Valid Input ';
+      document.getElementById('valid').style.color = 'red ';
+      document.getElementById('valids').innerHTML = '';
+    }
+  }
+
+  function searchlist1() {
+    var c = document.getElementsByClassName('spot')[0].value;
+    if (c == '22') {
+      var a = document.getElementsByClassName('contact')[0].style.display = 'block';
+      var b = document.getElementsByClassName('live-bus')[0].style.display = 'block';
+      document.getElementById('valids').innerHTML = '';
+      document.getElementById('valid').innerHTML = '';
+    }
+    else {
+      document.getElementById('valids').innerHTML = 'Please Enter Valid Input ';
+      document.getElementById('valids').style.color = 'red';
+      document.getElementById('valid').innerHTML = '';
+    }
+
+  }
+
+  function cros() {
+    var a = document.getElementsByClassName('listm')[0].style.height = 'auto';
+    var r = document.getElementById('contact').style.display='none';
+
+  }
+
+  function menu() {
+    var a = document.getElementsByClassName('listm')[0].style.height = '';
+
+  }
+
+  function validline() {
+    document.getElementById('valid').innerHTML = '';
+  }
+  
+  
+
+</script>
+
+</html>
